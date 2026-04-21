@@ -1,0 +1,111 @@
+Station_ID,Place Name ,Category,Distance(m),Place Name(TH)
+BTS_KASETSART UNIVERSITY,Kasetsart University,Education Center,50,มหาวิทยาลัยเกษตรศาสตร์
+BTS_SENA NIKHOM,Paolo Kaset Hospital,Hospital,130,โรงพยาบาลเปาโล เกษตร
+BTS_RATCHAYOTHIN,Major Cineplex Ratchayothin,Department Store,80,เมเจอร์ ซีนีเพล็กซ์ รัชโยธิน
+BTS_RATCHAYOTHIN,The Quarter Ratchayothin,Hotel,350,เดอะ ควอเตอร์ รัชโยธิน
+BTS_RATCHAYOTHIN,Villa Market Ratchayothin,Department Store,250,วิลล่า มาร์เก็ต รัชโยธิน
+BTS_PHAHONYOTHIN 24,Teenoi Suki,Department Store,400,สุกี้ตี๋น้อย
+BTS_HA YAEK LAT PHRAO,Lotus's Ladprao,Department Store,270,โลตัส ลาดพร้าว
+BTS_HA YAEK LAT PHRAO,Centara Grand at Central Plaza Ladprao,Hotel,450,เซ็นทารา แกรนด์ แอท เซ็นทรัล พลาซา ลาดพร้าว
+BTS_HA YAEK LAT PHRAO,Central Ladprao,Department Store,200,เซ็นทรัล ลาดพร้าว
+BTS_HA YAEK LAT PHRAO,Horwang School,Education Center,200,โรงเรียนหอวัง
+BTS_MO CHIT,Chatuchak Park,Tourist Attractions,450,สวนจตุจักร
+BTS_MO CHIT,Queen Sirikit Park,Tourist Attractions,750,สวนสมเด็จพระนางเจ้าสิริกิติ์ฯ
+BTS_SAPHAN KHWAI,Phyathai Phaholyothin Hospital,Hospital,170,โรงพยาบาลพญาไท พหลโยธิน
+BTS_SAPHAN KHWAI,Vimut Hospital,Hospital,550,โรงพยาบาลวิมุต
+BTS_SAPHAN KHWAI,BigC Supercenter Sapankwai,Department Store,230,บิ๊กซี ซูเปอร์เซ็นเตอร์ สะพานควาย
+BTS_SAPHAN KHWAI,Wat Phai Tan,Tourist Attractions,350,วัดไผ่ตัน
+BTS_ARI,Villa Market Aree,Department Store,30,วิลล่า มาร์เก็ต อารีย์
+BTS_ARI,Phaya Thai District Office,Tourist Attractions,450,สำนักงานเขตพญาไท
+BTS_ARI,Lotus's Go Fresh,Department Store,90,โลตัส โก เฟรช
+BTS_SUKHUMVIT_SIAM,Siam Paragon,Department Store,100,สยามพารากอน
+BTS_SUKHUMVIT_SIAM,Siam Center,Department Store,120,สยามเซ็นเตอร์
+BTS_SUKHUMVIT_SIAM,Siam Discovery,Department Store,250,สยามดิสคัฟเวอรี่
+BTS_SUKHUMVIT_SIAM,Siam Square One,Department Store,50,สยามสแควร์วัน
+BTS_SUKHUMVIT_SIAM,Madame Tussauds Bangkok,Tourist Attractions,250,มาดามทุสโซ กรุงเทพฯ
+BTS_SUKHUMVIT_SIAM,Sea Life Bangkok Ocean World,Tourist Attractions,150,ซี ไลฟ์ แบงคอก โอเชี่ยน เวิลด์
+BTS_SAI YUD,Sai Yud Market,Department Store,300,ตลาดสายหยุด
+BTS_SAPHAN MAI,Saphan Mai Market,Department Store,200,ตลาดสะพานใหม่
+BTS_BHUMIBOL ADULYADEJ HOSPITAL,Bhumibol Adulyadej Hospital,Hospital,100,โรงพยาบาลภูมิพลอดุลยเดช
+BTS_ROYAL THAI AIR FORCE MUSEUM,Royal Thai Air Force Museum,Tourist Attractions,100,พิพิธภัณฑ์กองทัพอากาศและการบินแห่งชาติ
+BTS_YAEK KOR POR AOR,Royal Thai Air Force Base,Tourist Attractions,300,ฐานทัพอากาศดอนเมือง
+BTS_KHU KHOT,Khu Khot Market,Department Store,400,ตลาดคูคต
+BTS_SAMRONG,Imperial World Samrong,Department Store,150,อิมพีเรียล เวิลด์ สำโรง
+BTS_SAMRONG,Wat Kaek (Sri Maha Uma Devi Temple),Tourist Attractions,300,วัดแขก (วัดศรีมหาอุมาเทวี)
+BTS_SAMRONG,Samrong General Hospital,Hospital,450,โรงพยาบาลสำโรงการแพทย์
+BTS_PU CHAO,Erawan Museum,Tourist Attractions,800,พิพิธภัณฑ์ช้างเอราวัณ
+BTS_PU CHAO,Wat Pha Keo Noi,Tourist Attractions,400,วัดป่าแก้วน้อย
+BTS_CHANG ERAWAN,Erawan Museum,Tourist Attractions,200,พิพิธภัณฑ์ช้างเอราวัณ
+BTS_ROYAL THAI NAVAL ACADEMY,Royal Thai Naval Academy,Education Center,100,โรงเรียนนายเรือ
+BTS_ROYAL THAI NAVAL ACADEMY,Naval Museum,Tourist Attractions,150,พิพิธภัณฑ์ทหารเรือ
+BTS_PAK NAM,Pak Nam Market,Department Store,200,ตลาดปากน้ำ
+BTS_PAK NAM,Phra Samut Chedi,Tourist Attractions,600,พระสมุทรเจดีย์
+BTS_PAK NAM,Samut Prakan City Observation Tower,Tourist Attractions,350,หอชมเมืองสมุทรปราการ
+BTS_SAI LUAT,Samut Prakan Crocodile Farm and Zoo,Tourist Attractions,700,ฟาร์มจระเข้และสวนสัตว์สมุทรปราการ
+BTS_KHEHA,Ancient City (Muang Boran),Tourist Attractions,1500,เมืองโบราณ
+BTS_KHEHA,Wat Asokaram,Tourist Attractions,900,วัดอโศการาม
+BTS_BEARING,St Andrews International School,Education Center,400,โรงเรียนนานาชาติเซนต์แอนดรูว์ส
+BTS_BANG NA,BITEC,Tourist Attractions,200,ศูนย์นิทรรศการและการประชุมไบเทค
+BTS_BANG NA,Central Plaza Bang Na,Department Store,450,เซ็นทรัล พลาซา บางนา
+BTS_BANG NA,Big C Bang Na,Department Store,500,บิ๊กซี บางนา
+BTS_UDOM SUK,Seacon Square,Department Store,900,ซีคอนสแควร์
+BTS_UDOM SUK,Udom Suk Night Market,Department Store,250,ตลาดนัดอุดมสุข
+BTS_UDOM SUK,Kluai Nam Thai Hospital,Hospital,400,โรงพยาบาลกล้วยน้ำไท
+BTS_UDOM SUK,Rama IX Park,Tourist Attractions,1200,สวนหลวง ร.9
+BTS_PUNNAWITHI,Anglo-Singapore International School,Education Center,500,โรงเรียนนานาชาติแองโกลสิงคโปร์
+BTS_PUNNAWITHI,Jim Thompson Factory Outlet,Department Store,600,จิม ทอมป์สัน แฟคทอรี่ เอาท์เล็ต
+BTS_BANG CHAK,Wat Dhammamongkol,Tourist Attractions,500,วัดธรรมมงคล
+BTS_BANG CHAK,Udom Suk Walk Market,Department Store,400,อุดมสุข วอล์ค
+BTS_ON NUT,Lotus's On Nut,Department Store,80,โลตัส อ่อนนุช
+BTS_ON NUT,Big C Extra On Nut,Department Store,200,บิ๊กซี เอ็กซ์ตร้า อ่อนนุช
+BTS_ON NUT,Century The Movie Plaza On Nut,Department Store,100,เซ็นจูรี่ เดอะ มูฟวี่ พลาซ่า อ่อนนุช
+BTS_ON NUT,Wells International School,Education Center,480,โรงเรียนนานาชาติเวลล์ส
+BTS_PHRA KHANONG,W District,Department Store,200,ดับเบิลยู ดิสทริค
+BTS_PHRA KHANONG,Kluai Nam Thai Hospital,Hospital,350,โรงพยาบาลกล้วยน้ำไท
+BTS_PHRA KHANONG,Jasmine Resort Hotel,Hotel,50,แจสมิน รีสอร์ท โฮเต็ล
+BTS_EKKAMAI,Ekkamai Bus Terminal,Tourist Attractions,200,สถานีขนส่งผู้โดยสารกรุงเทพฯ (เอกมัย)
+BTS_EKKAMAI,Gateway Ekkamai,Department Store,100,เกตเวย์ เอกมัย
+BTS_EKKAMAI,Major Cineplex Ekkamai,Department Store,100,เมเจอร์ ซีนีเพล็กซ์ เอกมัย
+BTS_THONG LO,J Avenue Thonglor,Department Store,250,เจ อเวนิว ทองหล่อ
+BTS_THONG LO,Samitivej Sukhumvit Hospital,Hospital,500,โรงพยาบาลสมิติเวช สุขุมวิท
+BTS_THONG LO,Villa Market Thonglor,Department Store,300,วิลล่า มาร์เก็ต ทองหล่อ
+BTS_PHROM PHONG,The Emporium,Department Store,50,ดิ เอ็มโพเรียม
+BTS_PHROM PHONG,EmQuartier,Department Store,100,ดิ เอ็มควอเทียร์
+BTS_PHROM PHONG,EmSphere,Department Store,200,เอ็มสเฟียร์
+BTS_PHROM PHONG,Benjasiri Park,Tourist Attractions,300,สวนเบญจสิริ
+BTS_PHROM PHONG,Camillian Hospital,Hospital,400,โรงพยาบาลคามิลเลียน
+BTS_ASOK,Terminal 21,Department Store,50,เทอร์มินอล 21
+BTS_ASOK,Grande Centre Point Hotel,Hotel,50,แกรนด์ เซ็นเตอร์ พอยต์ เทอร์มินอล 21
+BTS_ASOK,Soi Cowboy,Tourist Attractions,350,ซอยคาวบอย
+BTS_NANA,Nana Plaza,Tourist Attractions,150,นานาพลาซ่า
+BTS_NANA,JW Marriott Bangkok,Hotel,300,เจดับบลิว แมริออท กรุงเทพฯ
+BTS_NANA,The Landmark Bangkok,Hotel,200,เดอะ แลนด์มาร์ค กรุงเทพฯ
+BTS_PHLOEN CHIT,Central Embassy,Department Store,100,เซ็นทรัล เอ็มบาสซี
+BTS_PHLOEN CHIT,The Okura Prestige Bangkok,Hotel,150,ดิ โอกุระ เพรสทีจ กรุงเทพฯ
+BTS_PHLOEN CHIT,Lumpini Park,Tourist Attractions,900,สวนลุมพินี
+BTS_CHIT LOM,CentralWorld,Department Store,200,เซ็นทรัลเวิลด์
+BTS_CHIT LOM,Central Chidlom,Department Store,80,เซ็นทรัล ชิดลม
+BTS_CHIT LOM,Gaysorn Village,Department Store,100,เกษร วิลเลจ
+BTS_CHIT LOM,Erawan Shrine,Tourist Attractions,200,ศาลท้าวมหาพรหม เอราวัณ
+BTS_CHIT LOM,InterContinental Bangkok,Hotel,50,อินเตอร์คอนติเนนตัล กรุงเทพฯ
+BTS_CHIT LOM,Grand Hyatt Erawan Bangkok,Hotel,200,แกรนด์ ไฮแอท เอราวัณ กรุงเทพฯ
+BTS_RATCHATHEWI,MBK Center,Department Store,600,เอ็มบีเค เซ็นเตอร์
+BTS_RATCHATHEWI,Jim Thompson House,Tourist Attractions,500,พิพิธภัณฑ์บ้านจิม ทอมป์สัน
+BTS_RATCHATHEWI,Suan Pakkad Palace,Tourist Attractions,700,วังสวนผักกาด
+BTS_PHAYA THAI,Phaya Thai Palace,Tourist Attractions,800,พระราชวังพญาไท
+BTS_PHAYA THAI,Airport Rail Link Phaya Thai,Tourist Attractions,50,แอร์พอร์ต เรล ลิงก์ พญาไท
+BTS_VICTORY MONUMENT,Victory Monument,Tourist Attractions,50,อนุสาวรีย์ชัยสมรภูมิ
+BTS_VICTORY MONUMENT,King Power Downtown,Department Store,300,คิง เพาเวอร์ รางน้ำ
+BTS_VICTORY MONUMENT,Century The Movie Plaza,Department Store,250,เซ็นจูรี่ เดอะ มูฟวี่ พลาซ่า
+BTS_VICTORY MONUMENT,Santiphap Park,Tourist Attractions,500,สวนสันติภาพ
+BTS_VICTORY MONUMENT,Rajavithi Hospital,Hospital,600,โรงพยาบาลราชวิถี
+BTS_VICTORY MONUMENT,Saxophone Pub,Tourist Attractions,400,แซกโซโฟน ผับ
+BTS_SANAM PAO,Or Tor Kor Market,Department Store,700,ตลาด อ.ต.ก.
+BTS_SANAM PAO,Paholyothin Hospital,Hospital,400,โรงพยาบาลพหลโยธิน
+BTS_ROYAL FOREST DEPARTMENT,Royal Forest Department,Tourist Attractions,100,กรมป่าไม้
+BTS_BANG BUA,Bangkok Hospital,Hospital,600,โรงพยาบาลกรุงเทพ
+BTS_11TH INFANTRY REGIMENT,11th Infantry Regiment,Tourist Attractions,100,กรมทหารราบที่ 11
+BTS_WAT PHRA SRI MAHATHAT,Wat Phra Sri Mahathat,Tourist Attractions,150,วัดพระศรีมหาธาตุวรมหาวิหาร
+BTS_WAT PHRA SRI MAHATHAT,Central Ramindra,Department Store,800,เซ็นทรัล รามอินทรา
+BTS_WAT PHRA SRI MAHATHAT,Lumpinee Boxing Stadium,Tourist Attractions,500,สนามมวยลุมพินี
+BTS_PHAHON YOTHIN 59,Future Park Rangsit,Department Store,2000,ฟิวเจอร์พาร์ค รังสิต

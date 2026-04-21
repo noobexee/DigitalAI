@@ -1,0 +1,35 @@
+Station_ID,Place Name ,Category,Distance(m),Place Name(TH)
+BTS_NATIONAL STADIUM,Mbk Center,Department Store,150,เอ็ม บี เค เซ็นเตอร์ (มาบุญครอง)
+BTS_NATIONAL STADIUM,Bangkok Art & Culture Centre,Tourist Attractions,200,หอศิลปวัฒนธรรมแห่งกรุงเทพมหานคร
+BTS_NATIONAL STADIUM,Jim Thompson House,Tourist Attractions,400,พิพิธภัณฑ์บ้านจิม ทอมป์สัน
+BTS_SILOM_SIAM,Siam Paragon,Department Store,100,สยามพารากอน
+BTS_SILOM_SIAM,Siam Center,Department Store,120,สยามเซ็นเตอร์
+BTS_SILOM_SIAM,Siam Discovery,Department Store,250,สยามดิสคัฟเวอรี่
+BTS_SILOM_SIAM,Siam Square One,Department Store,50,สยามสแควร์วัน
+BTS_SILOM_SIAM,Madame Tussauds Bangkok,Tourist Attractions,250,มาดามทุสโซ กรุงเทพฯ
+BTS_SILOM_SIAM,Sea Life Bangkok Ocean World,Tourist Attractions,150,ซีไลฟ์ แบงค็อก โอเชียน เวิลด์
+BTS_RATCHADAMRI,Erawan Shrine,Tourist Attractions,450,ศาลท้าวมหาพรหมเอราวัณ
+BTS_RATCHADAMRI,Royal Bangkok Sports Club,Tourist Attractions,300,ราชกรีฑาสโมสร
+BTS_SALA DAENG,Lumpini Park,Tourist Attractions,400,สวนลุมพินี
+BTS_SALA DAENG,Silom Complex,Department Store,50,สีลมคอมเพล็กซ์
+BTS_SALA DAENG,Patpong Night Market,Tourist Attractions,300,ตลาดกลางคืนพัฒน์พงษ์
+BTS_SALA DAENG,Thaniya Plaza,Department Store,100,ธนิยะพลาซ่า
+BTS_CHONG NONSI,Mahanakhon Skywalk,Tourist Attractions,150,มหานคร สกายวอล์ค
+BTS_CHONG NONSI,King Power Mahanakhon,Tourist Attractions,150,คิง เพาเวอร์ มหานคร
+BTS_CHONG NONSI,Lalai Sap Market,Tourist Attractions,250,ตลาดละลายทรัพย์
+BTS_CHONG NONSI,Chong Nonsi Canal Park,Tourist Attractions,100,สวนช่องนนทรี
+BTS_SAINT LOUIS,Saint Louis Cathedral,Tourist Attractions,350,อาสนวิหารอัสสัมชัญ (หรือโบสถ์เซนต์หลุยส์)
+BTS_SAINT LOUIS,Health Land Sathorn,Tourist Attractions,400,เฮลท์แลนด์ สาขาสาทร
+BTS_SURASAK,Blue Elephant Cooking School,Education Center,50,โรงเรียนสอนทำอาหารบลูเอเลเฟ่นท์
+BTS_SURASAK,Sri Maha Mariamman Temple,Tourist Attractions,650,วัดพระศรีมหาอุมาเทวี (วัดแขกสีลม)
+BTS_SURASAK,Bangkokian Museum,Tourist Attractions,900,พิพิธภัณฑ์ชาวบางกอก
+BTS_SAPHAN TAKSIN,Wat Yannawa,Tourist Attractions,350,วัดยานนาวา
+BTS_SAPHAN TAKSIN,Iconsiam,Department Store,1200,ไอคอนสยาม
+BTS_SAPHAN TAKSIN,Asiatique The Riverfront,Tourist Attractions,1500,เอเชียทีค เดอะ ริเวอร์ฟร้อนท์
+BTS_KRUNG THON BURI,Sena Fest,Department Store,450,เสนาเฟสท์
+BTS_KRUNG THON BURI,The Jam Factory,Tourist Attractions,1100,เดอะ แจม แฟคทอรี่
+BTS_WONGWIAN YAI,Wongwian Yai Monument,Tourist Attractions,600,อนุสาวรีย์พระเจ้าตากสิน (วงเวียนใหญ่)
+BTS_WONGWIAN YAI,King Taksin The Great Monument,Tourist Attractions,600,พระบรมราชานุสาวรีย์สมเด็จพระเจ้าตากสินมหาราช
+BTS_TALAT PHLU,Talat Phlu Market,Tourist Attractions,800,ตลาดพลู
+BTS_WUTTHAKAT,Wat Paknam Bhasicharoen,Tourist Attractions,1200,วัดปากน้ำภาษีเจริญ
+BTS_BANG WA,Khlong Bang Luang Floating Market,Tourist Attractions,1500,ตลาดน้ำคลองบางหลวง

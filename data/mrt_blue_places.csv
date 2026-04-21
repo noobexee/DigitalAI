@@ -1,0 +1,72 @@
+Station_ID,Place Name ,Category,Distance(m),Place Name(TH)
+MRT_LAK SONG,Corgi in the Garden,Tourist Attractions,140,คอร์กี้ในสวน
+MRT_LAK SONG,The Mall Life Store,Department Store,310,ร้านค้าเดอะมอลล์ไลฟ์
+MRT_LAK SONG,Yakiniku gyuzanmai,Tourist Attractions,390,ยากินิกุ กิวซันไม
+MRT_BANG  KHAE,7-Eleven ,Tourist Attractions,20,เซเว่นอีเลฟเว่น
+MRT_PHASI CHAROEN,Seacon Bangkae,Department Store,50,ซีคอนบางแก
+MRT_PHASI CHAROEN,Mitrpracha Hospital,Hospital,230,โรงพยาบาลมิตรประชา
+MRT_PHETKASEM 48,Glome.bkk,Tourist Attractions,120,โกลม.บคค
+MRT_BANG WA,Cafe Amazon ,Tourist Attractions,50,คาเฟ่ อเมซอน
+MRT_BANG PHAI,Phyathai 3 Hospital,Hospital,180,โรงพยาบาลพญาไท 3
+MRT_BANG PHAI,Bed by Tha Phra Hotel,Hotel,250,เตียงข้างโรงแรมท่าพระ
+MRT_THA PHRA,Baan Paan Sook,Hotel,280,บ้านปานสุข
+MRT_THA PHRA,Wat Pradu Nai Songtham,Tourist Attractions,450,วัดประดู่ในสองธรรม
+MRT_THA PHRA,Wat Pradu Chim Phli (Luang Pu To),Tourist Attractions,780,วัดประดู่ฉิมพลี (หลวงปู่โต)
+MRT_ITSARAPHAP,Itsaraphap Night Market,Tourist Attractions,20,ตลาดกลางคืนอิศรภัทร
+MRT_ITSARAPHAP,Kasayapi Hotel,Hotel,50,โรงแรมกาซายาปิ
+MRT_ITSARAPHAP,Achcha Hotel,Hotel,90,โรงแรมอัชชา
+MRT_SANAM CHAI,Museum Siam,Tourist Attractions,60,พิพิธภัณฑ์สยาม
+MRT_SAM YOT,Siam Subway Hostel and Cafe Bangkok,Hotel,30,สยามซับเวย์โฮสเทลแอนด์คาเฟ่ กรุงเทพฯ
+MRT_SAM YOT,Lub D Bangkok Chinatown,Hotel,120,ลูบดี กรุงเทพฯ ไชน่าทาวน์
+MRT_SAM YOT,Observation Tower,Tourist Attractions,90,หอสังเกตการณ์
+MRT_SAM YOT,Rommaneenat Park,Tourist Attractions,180,สวนสาธารณะรอมมานินาต
+MRT_WAT MANGKON,Wat Mangkon Kamalawat (Wat Leng Neiy Yi),Tourist Attractions,160,วัดมังกรกมลาวาส (วัดเล่งเน่ยยี่)
+MRT_WAT MANGKON,Hotel Asa Bangkok Chinatown,Hotel,160,โรงแรมอาซา กรุงเทพฯ ไชน่าทาวน์
+MRT_HUA LAMPHONG,Metro Hotel,Hotel,60,โรงแรมเมโทร
+MRT_HUA LAMPHONG,Thai Railway Museum,Tourist Attractions,110,พิพิธภัณฑ์รถไฟไทย
+MRT_HUA LAMPHONG,Wat Traimit Witthayaram Worawihan,Tourist Attractions,360,วัดไตรมิตรวิทยารามวรวิหาร
+MRT_SAMYAN,Wat Hualamphong Royal Temple,Tourist Attractions,110,วัดหัวลำโพง
+MRT_SAMYAN,Samyan Mitrtown,Department Store,200,ซัมยัน มิตรทาวน์
+MRT_SAMYAN,Chamchuri Square,Department Store,50,จัตุรัสชัมชูรี
+MRT_SILOM,Lumpini Park,Tourist Attractions,500,สวนลุมพินี
+MRT_SILOM,Dusit Thani Bangkok,Hotel,250,ดุสิตธานี กรุงเทพฯ
+MRT_SILOM,Central Park Bangkok,Department Store,70,เซ็นทรัลพาร์ค กรุงเทพฯ
+MRT_SILOM,Silom Complex,Department Store,160,คอมเพล็กซ์สีลม
+MRT_LUMPHINI,One Bangkok,Department Store,140,วันแบงก์คอก
+MRT_LUMPHINI,Grand Center Point Lumpini,Hotel,240,แกรนด์เซ็นเตอร์พอยต์ลุมพินี
+MRT_KHLONG TOEI,TOAT Food Market,Tourist Attractions,210,ตลาดอาหาร TOAT
+MRT_KHLONG TOEI,MedPark Hospital,Hospital,270,โรงพยาบาลเมดพาร์ค
+MRT_QUEEN SIRIKIT NATIONAL CONVENTION,Queen Sirikit National Convention Center,Department Store,170,ศูนย์การประชุมแห่งชาติสิริกิติ์
+MRT_QUEEN SIRIKIT NATIONAL CONVENTION,Benjakitti Park,Tourist Attractions,390,สวนเบญจากิตติ
+MRT_SUKHUMVIT,Terminal 21 Asoke,Department Store,90,อาคารผู้โดยสาร 21 อโศก
+MRT_SUKHUMVIT,Sheraton Grand Sukhumvit Luxury Collection Hotel Bangkok,Hotel,280,โรงแรมเชอราตัน แกรนด์ สุขุมวิท ลักซ์ชัวรี คอลเล็กชั่น กรุงเทพฯ
+MRT_SUKHUMVIT,Jasmine City Hotel,Hotel,330,โรงแรมจัสมินซิตี้
+MRT_PHETCHABURI,"Bangkok Temple, Thailand",Tourist Attractions,120,วัดกรุงเทพฯ ประเทศไทย
+MRT_RAMA 9,Central Rama 9,Department Store,80,เซนทรัลพระรามเก้า
+MRT_RAMA 9,Avani Ratchada Bangkok Hotel,Hotel,140,โรงแรมอวานี รัชดา กรุงเทพฯ
+MRT_THAILAND CULTURAL CENTRE,Esplanade Ratchadaphisek,Department Store,80,เอสพลานาดรัชดาภิเศก
+MRT_THAILAND CULTURAL CENTRE,Ratchada Train Night Market,Tourist Attractions,190,ตลาดนัดกลางคืนรถไฟรัชดา
+MRT_SUTTHISAN,Thai Markets,Tourist Attractions,130,ตลาดไทย
+MRT_RATCHADAPHISEK,L Loft RATCHADA 19,Hotel,180,แอล ลอฟท์ รัชชาดา 19
+MRT_LAT PHRAO,The Bazaar Hotel Bangkok,Hotel,170,โรงแรมเดอะบาซาร์ กรุงเทพฯ
+MRT_LAT PHRAO,Big C Extra Ladprao 2,Tourist Attractions,650,บิ๊กซี เอ็กซ์ตร้า ลาดพร้าว 2
+MRT_PHAHONYOTHIN,Queen Sirikit's 84th Birthday Anniversary Park,Tourist Attractions,50,สวนฉลองวันคล้ายวันประสูติครบ 84 ​​ปี สมเด็จพระนางเจ้าสิริกิติ์ประสูติ
+MRT_PHAHONYOTHIN,Central Department Store Ladprao,Department Store,300,ห้างสรรพสินค้าเซ็นทรัลลาดพร้าว
+MRT_CHATUCHAK,Queen Sirikit Park,Tourist Attractions,500,สวนสาธารณะควีนสิริกิติ์
+MRT_CHATUCHAK,Chatuchak Weekend Market,Tourist Attractions,330,ตลาดนัดสุดสัปดาห์จตุจักร
+MRT_CHATUCHAK,JJ Mall Chatuchak is air-conditioned.,Department Store,580,ห้างสรรพสินค้า JJ Mall จตุจักร มีเครื่องปรับอากาศ
+MRT_KAMPHAENG PHET,Or Tor Kor Market,Tourist Attractions,90,ตลาดออร์ ตอร์ คอร์
+MRT_BANG SUE,Krung Thep Aphiwat Central Terminal Station (Bang Sue Grand Station),Tourist Attractions,290,สถานีกลางกรุงเทพอภิวัฒน์ (สถานีกลางบางซื่อ)
+MRT_TAO POON,Lotus Prachachuen (Taopoon),Tourist Attractions,330,โลตัสประชาชื่น (เตาปูน)
+MRT_TAO POON,Tao Poon Market,Tourist Attractions,90,ตลาดเตาปูน
+MRT_BANG PHO,Gateway at Bang Sue,Department Store,290,เกตเวย์ที่บางซื่อ
+MRT_BANG O,Lawson 108,Department Store,120,ลอว์สัน 108
+MRT_BANG PHLAT,Beyond Suites Hotel (Bang Phlat),Hotel,350,โรงแรมบียอนด์ สวีทส์ (บางพลัด)
+MRT_BANG PHLAT,Lotus Charansanitwong,Tourist Attractions,540,โลตัส ชารันสนิทวงศ์
+MRT_SIRINDHORN,"Ah Liu's Rad Na (Noodle Soup with Gravy), Street Food Style (Premium Meal Box)",Tourist Attractions,350,ราดน่า (ก๋วยเตี๋ยวน้ำราด) สไตล์สตรีทฟู้ดของอาหลิว (ชุดอาหารพรีเมียม)
+MRT_BANG YI KHAN,Central Pinklao,Department Store,910,เซ็นทรัลพิงลาว
+MRT_BANG YI KHAN,Amarin Hotel Rama 8,Hotel,630,โรงแรมอมรินทร์ พระราม 8
+MRT_BANG KHUN NON,Makro Club Charansanitwong,Tourist Attractions,360,มักโรคลับ ชารันสนิทวงศ์
+MRT_FAI CHAI,"Vichaiyavej Hospital, Fai Chai Intersection",Hospital,90,โรงพยาบาลวิชัยเวช แยกไฟฉาย
+MRT_CHARAN 13,Wat Deeduan,Tourist Attractions,380,วัดดีดวน
+MRT_CHARAN 13,"Wat Bang Sao Thong, Bangkok Noi",Tourist Attractions,590,วัดบางเสาธง บางกอกน้อย
