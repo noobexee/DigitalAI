@@ -16,27 +16,22 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 import llm_manager
+import fare as fare_calc
 from neo4j import GraphDatabase
 from neo4j.exceptions import CypherSyntaxError, ServiceUnavailable
 
 load_dotenv(Path(__file__).parent / ".env")
 
-
+# Silence neo4j INFO noise
 logging.basicConfig(level=logging.WARNING)
 logging.getLogger("neo4j").setLevel(logging.WARNING)
 
-# ---------------------------------------------------------------------------
 # Config
-# ---------------------------------------------------------------------------
-
 NEO4J_URI      = os.getenv("NEO4J_URI",      "bolt://localhost:7687")
 NEO4J_USER     = os.getenv("NEO4J_USER",     "neo4j")
 NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD", "password")
 
-# ---------------------------------------------------------------------------
 # ANSI colors (auto-disabled if terminal doesn't support them)
-# ---------------------------------------------------------------------------
-
 _USE_COLOR = sys.stdout.isatty()
 
 def _c(code: str, text: str) -> str:
@@ -49,10 +44,7 @@ def dim(t):     return _c("2",  t)
 def bold(t):    return _c("1",  t)
 def red(t):     return _c("91", t)
 
-# ---------------------------------------------------------------------------
 # Graph schema — injected into every Claude prompt
-# ---------------------------------------------------------------------------
-
 SCHEMA_PROMPT = """
 You are a Bangkok transit assistant. You answer questions about MRT and BTS train stations,
 nearby places, and routes. You support both English and Thai — always reply in the same
@@ -218,18 +210,12 @@ def validate_cypher(query: str) -> tuple[bool, str]:
         return False, "No MATCH clause found."
     return True, ""
 
-# ---------------------------------------------------------------------------
 # Neo4j helpers
-# ---------------------------------------------------------------------------
-
-def run_cypher(driver, query: str) -> list[dict]:
+def run_cypher(driver, query: str, **params) -> list[dict]:
     with driver.session() as session:
-        return [dict(r) for r in session.run(query)]
+        return [dict(r) for r in session.run(query, **params)]
 
-# ---------------------------------------------------------------------------
 # LLM prompts
-# ---------------------------------------------------------------------------
-
 _CYPHER_SYSTEM = SCHEMA_PROMPT + """
 Your task: convert the user's question into a Cypher query for the Bangkok transit graph.
 
@@ -273,10 +259,7 @@ For PLACE / NEARBY questions (when results contain place names and distances):
 - Sort from nearest to furthest in your answer.
 """
 
-# ---------------------------------------------------------------------------
 # Cypher extraction
-# ---------------------------------------------------------------------------
-
 def _extract_cypher(raw: str) -> str:
     """
     Extract a Cypher query from the LLM's JSON response.
@@ -309,34 +292,31 @@ def _extract_cypher(raw: str) -> str:
     if match:
         return text[match.start():].strip()
 
-    return text   # let the validator reject it with a clear error
+    return text   
 
 
-# ---------------------------------------------------------------------------
 # Pipeline functions — now use llm_manager.call()
-# ---------------------------------------------------------------------------
-
 def generate_cypher(question: str) -> str:
     """Translate a natural language question into a Cypher query."""
     raw = llm_manager.call(_CYPHER_SYSTEM, question)
     return _extract_cypher(raw)
 
 
-def format_answer(question: str, cypher: str, results: list[dict]) -> str:
+def format_answer(question: str, cypher: str, results: list[dict], fare_info: str | None = None) -> str:
     """Turn raw Neo4j results into a natural language answer."""
+    fare_section = f"\nFare information (pre-calculated):\n{fare_info}\n" if fare_info else ""
     body = (
         f"User question: {question}\n\n"
         f"Cypher used:\n{cypher}\n\n"
-        f"Results:\n{json.dumps(results, ensure_ascii=False, indent=2)}\n\n"
-        "Please answer the user's question."
+        f"Results:\n{json.dumps(results, ensure_ascii=False, indent=2)}\n"
+        f"{fare_section}\n"
+        "Please answer the user's question. If fare information is provided above, "
+        "include it naturally in your answer."
     )
     return llm_manager.call(_ANSWER_SYSTEM, body)
 
 
-# ---------------------------------------------------------------------------
 # Single question → answer
-# ---------------------------------------------------------------------------
-
 def ask(question: str, driver) -> dict:
     """Run one question through the full pipeline. Returns result dict."""
 
@@ -388,14 +368,67 @@ def ask(question: str, driver) -> dict:
             "error": "ServiceUnavailable",
         }
 
-    # 4. Format answer
+    # 3b. If result looks like a path (has a "stations" list), compute fare
+    fare_info = _compute_fare_if_route(results, driver)
+
+    # 4. Format answer — inject fare info if available
     print(dim("  Composing answer..."), end="\r", flush=True)
     try:
-        answer = format_answer(question, cypher, results)
+        answer = format_answer(question, cypher, results, fare_info)
     except RuntimeError as e:
         return {"answer": str(e), "cypher": cypher, "results": results, "error": str(e)}
 
     return {"answer": answer, "cypher": cypher, "results": results, "error": None}
+
+
+def _compute_fare_if_route(results: list[dict], driver) -> str | None:
+    """
+    If the query results contain a route (a list of station name_en values
+    in a 'stations' key), fetch each station's line_id from Neo4j and
+    compute the fare using fare.py.
+    Returns a fare summary string, or None if not a route result.
+    """
+    if not results:
+        return None
+
+    # shortestPath queries return {"stations": [...], "stops": N}
+    first = results[0]
+    station_names = first.get("stations")
+    if not station_names or not isinstance(station_names, list):
+        return None
+
+    # Fetch line_id for each station name in the path
+    try:
+        rows = run_cypher(
+            driver,
+            "MATCH (s:Station) WHERE s.name_en IN $names "
+            "RETURN s.name_en AS name_en, s.station_id AS station_id, s.line_id AS line_id",
+            names=station_names,
+        )
+    except Exception:
+        return None
+
+    # Build a lookup: name_en → {station_id, line_id}
+    lookup = {r["name_en"]: r for r in rows}
+
+    # Reconstruct ordered path (preserving route order from the query result)
+    path = []
+    for name in station_names:
+        info = lookup.get(name)
+        if info:
+            path.append({
+                "station_id": info["station_id"],
+                "name_en":    info["name_en"],
+                "line_id":    info["line_id"],
+            })
+
+    if len(path) < 2:
+        return None
+
+    try:
+        return fare_calc.fare_summary(path)
+    except Exception:
+        return None
 
 # ---------------------------------------------------------------------------
 # Terminal REPL
@@ -452,10 +485,7 @@ def print_debug(cypher: str, results: list[dict]):
     print(dim("  └───────────────────────────────────────────────"))
     print()
 
-# ---------------------------------------------------------------------------
 # Main
-# ---------------------------------------------------------------------------
-
 def main():
     # Initialise LLM client (validates API key early)
     try:
