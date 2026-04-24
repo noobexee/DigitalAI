@@ -14,6 +14,7 @@ MAX_RETRIES       = 3
 _client = None  
 _genai  = None   
 
+
 def _get_client():
     """Return the appropriate client, initialising once."""
     global _client, _genai

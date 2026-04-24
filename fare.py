@@ -12,7 +12,12 @@ Current rates (last verified April 2026):
   BTS Silom       — effective 1 November 2025 (same table as Sukhumvit)
 """
 
+# ---------------------------------------------------------------------------
 # Fare tables
+# Each list index = number of stops (index 0 unused, index 1 = 1 stop, etc.)
+# Last value applies to all stops >= len(table) - 1
+# ---------------------------------------------------------------------------
+
 # MRT Blue Line
 # Source: Cabinet approval June 2024, effective July 3 2024
 # 17 ฿ base + increments per stop, capped at 45 ฿ for 12+ stops
@@ -147,28 +152,30 @@ def calculate_journey_fare(path: list[dict]) -> dict:
             seg_stops = seg_end - seg_start
             seg_fare = fare_for_stops(seg_stops, current_line) if seg_stops >= 1 else 0
 
-            segments.append({
-                "line_id": current_line,
-                "from":    path[seg_start]["name_en"],
-                "to":      path[seg_end]["name_en"],
-                "stops":   seg_stops,
-                "fare":    seg_fare,
-            })
+            if seg_stops >= 0:  # always append, even 0-stop boundary segments
+                segments.append({
+                    "line_id": current_line,
+                    "from":    path[seg_start]["name_en"],
+                    "to":      path[seg_end]["name_en"],
+                    "stops":   seg_stops,
+                    "fare":    seg_fare,
+                })
 
             if line != current_line:
                 interchanges += 1
-                # Start new segment from the interchange station
-                seg_start = i - 1
+                # New segment starts at i — the first station on the new line
+                # (interchange is a physical walk, not a shared stop)
+                seg_start = i
                 current_line = line
 
-                # Handle the case where this is also the last station
+                # If this line change is also the last station, close immediately
                 if i == len(path) - 1:
                     segments.append({
                         "line_id": current_line,
-                        "from":    path[seg_start]["name_en"],
+                        "from":    path[i]["name_en"],
                         "to":      path[i]["name_en"],
-                        "stops":   1,
-                        "fare":    fare_for_stops(1, current_line),
+                        "stops":   0,
+                        "fare":    0,
                     })
 
     total = sum(s["fare"] for s in segments) + INTERCHANGE_SURCHARGE * interchanges
@@ -184,23 +191,29 @@ def fare_summary(path: list[dict]) -> str:
     Return a human-readable fare summary string for use in chatbot answers.
 
     Example output:
-      Fare: 17 ฿ (MRT Blue Line, 1 stop)
-      Fare: 17 ฿ + 17 ฿ = 34 ฿ (MRT Blue 1 stop + BTS Silom 1 stop, 1 interchange)
+      Estimated fare: 17 ฿ (MRT Blue Line, 1 stop)
+      Estimated fare: 17 ฿ + 26 ฿ = 43 ฿ (MRT Blue 1 stop + BTS Silom 2 stops, 1 interchange)
     """
     result = calculate_journey_fare(path)
 
-    if not result["segments"]:
+    # Only show segments that actually cost something
+    chargeable = [s for s in result["segments"] if s["stops"] > 0]
+
+    if not chargeable:
         return "Fare: n/a"
 
-    if len(result["segments"]) == 1:
-        s = result["segments"][0]
+    if len(chargeable) == 1:
+        s = chargeable[0]
         line_label = _line_label(s["line_id"])
         return f"Estimated fare: {s['fare']} ฿ ({line_label}, {s['stops']} stop{'s' if s['stops'] != 1 else ''})"
 
-    parts = [f"{s['fare']} ฿ ({_line_label(s['line_id'])}, {s['stops']} stop{'s' if s['stops'] != 1 else ''})"
-             for s in result["segments"]]
+    parts = [
+        f"{s['fare']} ฿ ({_line_label(s['line_id'])}, {s['stops']} stop{'s' if s['stops'] != 1 else ''})"
+        for s in chargeable
+    ]
+    total = sum(s["fare"] for s in chargeable)
     interchange_note = f"{result['interchanges']} interchange{'s' if result['interchanges'] != 1 else ''}"
-    return f"Estimated fare: {' + '.join(parts)} = {result['total_fare']} ฿ ({interchange_note})"
+    return f"Estimated fare: {' + '.join(parts)} = {total} ฿ ({interchange_note})"
 
 
 def _line_label(line_id: str) -> str:
