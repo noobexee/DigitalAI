@@ -18,7 +18,7 @@ An AI-powered terminal chatbot for Bangkok's BTS and MRT rail network. Ask quest
 ## Project Structure
 
 ```
-final-project/
+DigitalAI/
 ├── data/                          # CSV data files (see Data section below)
 │   ├── station_map.csv
 │   ├── interchange.csv
@@ -29,19 +29,22 @@ final-project/
 │   ├── bts_sukhumvit_connections.csv
 │   └── bts_silom_connections.csv
 │
-├── ingest_transport_graph.py      # Load CSV data into Neo4j
-├── chatbot.py               # Main chatbot — run this
+├── ingest_graph.py                # Load CSV data into Neo4j
+├── chatbot.py                     # Main chatbot — run this
+├── trip_planner.py                # Plan visits to nearby places
 ├── llm_manager.py                  # LLM backend (switch Typhoon ↔ Gemini here)
 ├── fare.py                        # BTS & MRT fare tables and calculator
 ├── requirements.txt               # Python dependencies
-└── .env                           # API keys and DB connection (create this)
+├── tests/                         # Configuration regression tests
+└── .env.example                   # Copy to .env and supply local credentials
 ```
 
 ---
 
 ## Requirements
 
-- Python 3.11+
+- Python 3.12. The pinned dependencies are verified with this version;
+  Python 3.14 currently has a dependency conflict in the Gemini SDK dependency tree.
 - [Neo4j Desktop](https://neo4j.com/download/) or Neo4j Community Server (local)
 - A Typhoon API key **or** a Google AI Studio API key (see Step 2)
 
@@ -52,15 +55,21 @@ final-project/
 ### 1. Clone and set up the virtual environment
 
 ```bash
-git clone <your-repo-url>
-cd final-project
+git clone https://github.com/noobexee/DigitalAI.git
+cd DigitalAI
 
-python -m venv venv
-source venv/bin/activate        # macOS / Linux
-# venv\Scripts\activate         # Windows
+python3.12 -m venv .venv
+source .venv/bin/activate
 
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
+
+On Windows, create the environment with `py -3.12 -m venv .venv` and
+activate it with `.venv\Scripts\Activate.ps1` in PowerShell before installing.
+
+Create a new environment on each machine. Virtual environments and Python
+cache files are generated locally and excluded from Git. Dependencies are
+recorded in `requirements.txt`.
 
 ### 2. Get an API key
 
@@ -89,7 +98,7 @@ Edit `.env`:
 TYPHOON_API_KEY=your_typhoon_api_key_here
 GOOGLE_API_KEY=your_google_api_key_here    # only needed if using Gemini
 
-# Neo4j connection — default values work for a local install
+# Neo4j connection — use the credentials for your local database
 NEO4J_URI=bolt://localhost:7687
 NEO4J_USER=neo4j
 NEO4J_PASSWORD=your_neo4j_password_here
@@ -101,10 +110,12 @@ Open Neo4j Desktop, select your database, and click **Start**. The database must
 
 ### 5. Ingest data into the graph
 
-Place your CSV files inside the `data/` folder, then run:
+The repository includes the CSV files in `data/`. Both the ingestion script
+and chatbot load `.env` from the project directory; exported environment
+variables take precedence. Run:
 
 ```bash
-python ingest_transport_graph.py
+python ingest_graph.py
 ```
 
 You should see a verification summary at the end:
@@ -133,7 +144,7 @@ The banner shows which model is active:
 
 ```
   Bangkok Transit Chatbot
-  Model: Typhoon v2.1 12B (SCB 10X)
+  Model: Typhoon v2.5 30B (SCB 10X)
   Ask in Thai or English · type /help for commands
   ────────────────────────────────────────────────
 ```
@@ -235,6 +246,20 @@ python fare.py
 ---
 
 ## Troubleshooting
+
+**Local checks**
+
+With the virtual environment activated, run:
+
+```bash
+python -m pip check
+python -m unittest discover -s tests -v
+python fare.py
+```
+
+These checks do not require Neo4j or LLM credentials. The configuration tests
+use temporary fixture credentials. Running ingestion and asking the chatbot
+questions additionally requires your database and a configured LLM provider.
 
 **Empty results / wrong station names**
 Turn on `/debug` to see the generated Cypher. If the `station_id` looks wrong (e.g. `BTS_SUKHUMVIT_ASOOK` instead of `BTS_ASOK`), use `/check <name>` to find the exact ID and report it — the schema prompt may need updating.
