@@ -1,5 +1,5 @@
 """
-terminal_chat.py
+chatbot.py
 ----------------
 Interactive terminal chatbot for the Bangkok transit knowledge graph.
 
@@ -8,7 +8,7 @@ Change the PROVIDER variable at the top of that file to switch models.
 
 Usage
 -----
-  python terminal_chat.py
+  python chatbot.py
 
 .env file (create in the same folder as this script)
   TYPHOON_API_KEY=your_key_here    ← if using Typhoon (default)

@@ -1,9 +1,13 @@
 import os
 import sys
 import logging
+from pathlib import Path
 import pandas as pd
+from dotenv import load_dotenv
 from neo4j import GraphDatabase
 from neo4j.exceptions import ServiceUnavailable, AuthError
+
+load_dotenv(Path(__file__).parent / ".env")
 
 # Config
 NEO4J_URI      = os.getenv("NEO4J_URI",      "bolt://localhost:7687")
